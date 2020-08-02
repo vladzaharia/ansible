@@ -1,0 +1,21 @@
+- name: Tear down existing containers
+  docker_compose:
+    project_src: ~/ome
+    files:
+      - docker-compose.edge.yml
+    state: absent
+
+- name: Pull latest image
+  docker_compose:
+    project_src: ~/ome
+    files:
+      - docker-compose.edge.yml
+    pull: yes
+    state: present
+
+- name: Bring containers up
+  docker_compose:
+    project_src: ~/ome
+    files:
+      - docker-compose.edge.yml
+    build: no

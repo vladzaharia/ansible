@@ -1,0 +1,4 @@
+---
+- name: Remove uneeded packages
+  apt:
+    autoremove: yes

@@ -1,0 +1,2 @@
+- import_tasks: git_clone.yml
+- import_tasks: docker_compose.yml

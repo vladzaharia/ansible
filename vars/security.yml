@@ -1,0 +1,11 @@
+---
+# Azure NSG has us covered here
+ufw_default_input_policy: ACCEPT
+ufw_default_forward_policy: ACCEPT
+ufw_default_output_policy: ACCEPT
+
+sysctl_overwrite:
+  net.ipv4.ip_forward: 1
+  
+security_sudoers_passwordless:
+  - vlad
