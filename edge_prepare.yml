@@ -1,0 +1,12 @@
+---
+- hosts: edge
+  become: true
+
+  vars_files:
+    - vars/pip.yml
+    
+  roles:
+    - common
+    - geerlingguy.pip
+    - geerlingguy.docker
+    - azure

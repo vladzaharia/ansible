@@ -3,13 +3,10 @@
   become: true
 
   vars_files:
-    - vars/pip.yml
     - vars/security.yml
     
   roles:
     - common
     - dev-sec.os-hardening
     - geerlingguy.security
-    - geerlingguy.pip
-    - geerlingguy.docker
-    - azure
+  

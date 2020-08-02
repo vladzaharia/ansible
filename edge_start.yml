@@ -1,5 +1,5 @@
 --- 
 - hosts: edge
+  become: true
   roles:
-    - common
     - docker-edge
