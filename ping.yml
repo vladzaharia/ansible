@@ -1,6 +1,0 @@
----
-- hosts: edge
-  become: yes
-  tasks:
-  - name: test connection
-    ping:
