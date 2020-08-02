@@ -1,3 +1,4 @@
 ---
-- name: Get Azure CLI version
+- name: Az login with managed identity
   shell: az login --identity
+  changed_when: false

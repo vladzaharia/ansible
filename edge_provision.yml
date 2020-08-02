@@ -1,5 +1,6 @@
 ---
 - hosts: edge
+  become: true
   roles:
     - azure
     - docker

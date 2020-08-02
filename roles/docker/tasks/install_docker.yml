@@ -1,17 +1,4 @@
 ---
-- name: Install dependencies
-  apt: 
-    update_cache: yes
-    pkg:
-      - apt-transport-https
-      - ca-certificates
-      - curl
-      - software-properties-common
-      - python3-pip
-      - virtualenv
-      - python3-setuptools
-    state: latest
-
 - name: Add Docker GPG key
   apt_key:
     url: https://download.docker.com/linux/ubuntu/gpg
@@ -49,6 +36,12 @@
 
 - name: Get Docker version
   shell: docker -v | cut -d ' ' -f 3 | cut -d ',' -f 1
+  register: docker_ver
+  changed_when: false
+- debug: msg="{{ docker_ver.stdout }}"
 
 - name: Get Docker-compose version
   shell: docker-compose -v | cut -d ' ' -f 3 | cut -d ',' -f 1
+  register: docker_compose_ver
+  changed_when: false
+- debug: msg="{{ docker_compose_ver.stdout }}"
