@@ -1,5 +1,5 @@
 ---
-- hosts: edge
+- hosts: all
   become: true
 
   vars_files:
