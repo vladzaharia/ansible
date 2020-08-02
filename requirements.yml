@@ -1,0 +1,4 @@
+- name: dev-sec.os-hardening
+- name: geerlingguy.security
+- name: geerlingguy.pip
+- name: geerlingguy.docker
