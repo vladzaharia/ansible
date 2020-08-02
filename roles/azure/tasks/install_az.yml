@@ -10,7 +10,7 @@
     state: present
 
 - name: Install Azure CLI
-  apt: 
+  apt:
     update_cache: yes
     name: azure-cli
     state: latest

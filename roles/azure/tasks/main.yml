@@ -1,4 +1,5 @@
-- import_role: 
+- name: Import Common role
+  import_role:
     name: common
 
 - import_tasks: install_az.yml
