@@ -1,0 +1,5 @@
+---
+- name: Clone OME repo
+  git:
+    repo: https://github.com/ggstream-app/OvenMediaEngine.git
+    dest: ~/ome

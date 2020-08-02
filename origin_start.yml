@@ -1,0 +1,5 @@
+--- 
+- hosts: origin
+  become: true
+  roles:
+    - docker-origin
