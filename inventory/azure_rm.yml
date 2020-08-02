@@ -1,0 +1,17 @@
+plugin: azure_rm
+
+include_vm_resource_groups: 
+  - ggstream-edge-na
+  - ggstream-edge-eu
+  - ggstream-edge-asia
+
+conditional_groups:
+  edge: true
+  azure: true
+
+keyed_groups:
+- prefix: azLocation
+  key: location
+
+ansible_host_key_checking: false
+ansible_ssh_common_args: "-o StrictHostKeyChecking=no"

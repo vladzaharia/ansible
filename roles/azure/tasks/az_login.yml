@@ -1,0 +1,3 @@
+---
+- name: Get Azure CLI version
+  shell: az login --identity

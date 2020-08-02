@@ -1,0 +1,5 @@
+---
+- hosts: edge
+  roles:
+    - azure
+    - docker

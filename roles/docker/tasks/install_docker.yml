@@ -1,0 +1,54 @@
+---
+- name: Install dependencies
+  apt: 
+    update_cache: yes
+    pkg:
+      - apt-transport-https
+      - ca-certificates
+      - curl
+      - software-properties-common
+      - python3-pip
+      - virtualenv
+      - python3-setuptools
+    state: latest
+
+- name: Add Docker GPG key
+  apt_key:
+    url: https://download.docker.com/linux/ubuntu/gpg
+    state: present
+
+- name: Add Docker repository
+  apt_repository:
+    repo: deb https://download.docker.com/linux/ubuntu bionic stable
+    state: present
+
+- name: Install Docker
+  apt: 
+    update_cache: yes
+    pkg:
+      - docker-ce
+      - docker-ce-cli
+      - docker-compose
+      - containerd.io
+    state: latest
+
+- name: Install Docker module for Python
+  pip:
+    name: docker
+
+- name: Create "docker" group
+  group:
+    name: docker
+    state: present
+
+- name: Add remote user to "docker" group
+  user:
+    name: vlad
+    group: docker
+    append: yes
+
+- name: Get Docker version
+  shell: docker -v | cut -d ' ' -f 3 | cut -d ',' -f 1
+
+- name: Get Docker-compose version
+  shell: docker-compose -v | cut -d ' ' -f 3 | cut -d ',' -f 1

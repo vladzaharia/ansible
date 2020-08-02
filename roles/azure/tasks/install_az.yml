@@ -1,0 +1,32 @@
+---
+- name: Install dependencies
+  apt: 
+    update_cache: yes
+    pkg:
+      - apt-transport-https
+      - ca-certificates
+      - curl
+      - software-properties-common
+      - python3-pip
+      - virtualenv
+      - python3-setuptools
+    state: latest
+
+- name: Add Microsoft GPG key
+  apt_key:
+    url: https://packages.microsoft.com/keys/microsoft.asc
+    state: present
+
+- name: Add Azure CLI repository
+  apt_repository:
+    repo: deb https://packages.microsoft.com/repos/azure-cli/ bionic main
+    state: present
+
+- name: Install Azure CLI
+  apt: 
+    update_cache: yes
+    name: azure-cli
+    state: latest
+
+- name: Get Azure CLI version
+  shell: az -v
