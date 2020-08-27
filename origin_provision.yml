@@ -1,5 +1,0 @@
----
-- import_playbook: all_update.yml
-- import_playbook: all_harden.yml
-- import_playbook: all_prepare.yml
-- import_playbook: origin_start.yml

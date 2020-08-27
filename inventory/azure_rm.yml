@@ -1,17 +1,33 @@
-plugin: azure_rm
+all:
+  children:
+    westin:
+      hosts:
+        ar.sea.core.zhr.one:              # Host
+        ba.sea.core.zhr.one:              # VM 1 - Phone
+        co.sea.core.zhr.one:              # VM 2 - Docker
+        ga.sea.core.zhr.one:              # VM 3 - Unused
+        ne.sea.core.zhr.one:              # VM 4 - GGStream
+        # o.sea.core.zhr.one:               # VM 5 - Spare
 
-include_vm_resource_groups: 
-  - ggstream-edge-na
-  - ggstream-edge-eu
-  - ggstream-edge-asia
+    home:
+      hosts:
+        dc.local.zhr.one:                 # Host
+        ansible.dc.local.zhr.one:         # VM 4 - AWX
+        docker.dc.local.zhr.one:          # VM 1 - Docker
+        hashicorp.dc.local.zhr.one:       # VM 5 - Hashicorp
+        plex.dc.local.zhr.one:            # VM 2 - Plex
+        pritunl.dc.local.zhr.one:         # VM 3 - Pritunl
+        rancher.dc.local.zhr.one:         # VM 6 - Rancher
+        # beta.rancher.local.zhr.one:       # Skull Canyon - Rancher Node
+        # charlie.rancher.local.zhr.one:    # NUC - Rancher Node
 
-conditional_groups:
-  edge: true
-  azure: true
+    docker:
+      hosts:
+        co.sea.core.zhr.one:
+        docker.dc.local.zhr.one:
 
-keyed_groups:
-- prefix: azLocation
-  key: location
-
-ansible_host_key_checking: false
-ansible_ssh_common_args: "-o StrictHostKeyChecking=no"
+    rancher:
+      hosts:
+        rancher.dc.local.zhr.one:
+        beta.rancher.local.zhr.one:
+        charlie.rancher.local.zhr.one:

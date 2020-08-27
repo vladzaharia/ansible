@@ -1,2 +1,0 @@
-- import_tasks: install_az.yml
-- import_tasks: az_login.yml
