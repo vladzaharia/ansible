@@ -29,6 +29,7 @@
   mount:
     fstype: cifs
     state: mounted
-    path: "{{ samba_mount_path }}"
+    path: "/nfs/{{ item }}"
     opts: "credentials={{ samba_home }}/.smbcredentials,file_mode=0777,dir_mode=0777"
-    src: "{{ samba_share }}"
+    src: "//{{ cifs_server }}/{{ item }}"
+  loop: "{{ cifs_mounts }}"

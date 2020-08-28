@@ -2,15 +2,6 @@
 - hosts: all
   become: true
 
-  tasks:
-    - name: Mount CIFS mounts
-      include_role:
-        name: cifs
-      vars:
-        domain: zaharia
-        samba_share: "//{{ cifs_server }}/{{ item }}"
-        samba_mount_path: "/nfs/{{ item }}"
-        samba_mount_user: "{{ cifs_user }}"
-        samba_mount_pass: "{{ cifs_pass }}"
-      loop: "{{ cifs_mounts }}"
+  roles:
+   - cifs
 
