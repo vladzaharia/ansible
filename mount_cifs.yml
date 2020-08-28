@@ -1,12 +1,12 @@
 ---
-  - hosts: all
-    become: true
+- hosts: all
+  become: true
 
-    roles:
-      - name: Mount Documents
-        role: cifs
-        domain: zaharia
-        samba_share: "//{{ cifs_server }}/documents"
-        samba_mount_user: "{{ cifs_user }}"
-        samba_mount_pass: "{{ cifs_pass }}"
+  roles:
+    - name: Mount Documents
+      role: cifs
+      domain: zaharia
+      samba_share: "//{{ cifs_server }}/documents"
+      samba_mount_user: "{{ cifs_user }}"
+      samba_mount_pass: "{{ cifs_pass }}"
   
