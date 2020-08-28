@@ -2,21 +2,19 @@
 
 - name: Install CIFS and other required packages for mounting with apt
   apt: 
-    name: "{{ item }}"
+    name: "{{ apt_mount_packages }}"
     update_cache: yes
     force: yes
     state: latest
-  with_items: "{{ apt_mount_packages }}"
   when: ansible_os_family == 'Debian'
   tags: packages
 
 - name: Install CIFS and other required packages for mounting with yum
   yum: 
-    name: "{{ item }}"
+    name: "{{ yum_mount_packages }}"
     update_cache: yes
     force: yes
     state: latest
-  with_items: "{{ yum_mount_packages }}"
   when: ansible_os_family == 'RedHat'
   tags: packages
 
