@@ -21,7 +21,7 @@
 - name: Place Samba credentials file
   template:
     src: .smbcredentials.j2
-    dest: "{{ samba_home }}/.smbcredentials"
+    dest: "{{ ansible_env.HOME }}/.smbcredentials"
     owner: "{{ samba_user }}"
     mode: 0600
 
@@ -30,6 +30,6 @@
     fstype: cifs
     state: mounted
     path: "/nfs/{{ item }}"
-    opts: "credentials={{ samba_home }}/.smbcredentials,file_mode=0777,dir_mode=0777"
+    opts: "credentials={{ ansible_env.HOME }}/.smbcredentials,file_mode=0777,dir_mode=0777"
     src: "//{{ cifs_server }}/{{ item }}"
   loop: "{{ cifs_mounts }}"
