@@ -5,7 +5,7 @@
     roles:
       - name: Mount Documents
         role: cifs
-        domain: zhr.one
+        domain: zaharia
         samba_share: "//{{ cifs_server }}/documents"
         samba_mount_user: "{{ cifs_user }}"
         samba_mount_pass: "{{ cifs_pass }}"
