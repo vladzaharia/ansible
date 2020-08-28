@@ -4,7 +4,7 @@
 
     roles:
       - name: Mount Documents
-        role: marcusianlevine.cifs-mount
+        role: cifs
         domain: zhr.one
         samba_share: "//{{ cifs_server }}/documents"
         samba_mount_user: "{{ cifs_user }}"
