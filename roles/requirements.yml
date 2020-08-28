@@ -2,3 +2,4 @@
 - name: geerlingguy.security
 - name: geerlingguy.pip
 - name: geerlingguy.docker
+- name: marcusianlevine.cifs-mount
