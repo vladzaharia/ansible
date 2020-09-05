@@ -6,9 +6,7 @@
     - name: Create ansible account
       user:
         name: ansible
-        password: "{{ user_pw }}"
-        groups: sudo
-        append: yes
+        password: "!"
         state: present
 
     - name: Add ansible authorized key
@@ -17,3 +15,9 @@
         key: "{{ user_pub_key }}"
         state: present
       
+    - name: Configure sudoers
+        lineinfile:   dest=/etc/sudoers.d/ansible
+          line: "ansible ALL=(ALL) ALL"
+          state: present
+          create: yes
+          validate: 'visudo -cf %s'
