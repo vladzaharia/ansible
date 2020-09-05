@@ -16,9 +16,9 @@
         state: present
       
     - name: Configure sudoers
-        lineinfile:   
-          dest: /etc/sudoers.d/ansible
-          line: "ansible ALL=(ALL) ALL"
-          state: present
-          create: yes
-          validate: "visudo -cf %s"
+      lineinfile:   
+        dest: /etc/sudoers.d/ansible
+        line: "ansible ALL=(ALL) ALL"
+        state: present
+        create: yes
+        validate: "visudo -cf %s"
