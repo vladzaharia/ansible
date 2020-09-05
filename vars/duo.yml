@@ -1,0 +1,5 @@
+---
+  duo_unix_duo_ikey: DIWMQITHQ6XBO3SSV4HG
+  duo_unix_duo_skey: WOb2z9jfKN7FquvtHOVePo3xPQetzBIQonKgFF6a
+  duo_unix_duo_host: api-78e703f1.duosecurity.com
+  duo_unix_groups: admin,sudo
