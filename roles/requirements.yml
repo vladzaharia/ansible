@@ -2,4 +2,3 @@
 - name: geerlingguy.security
 - name: geerlingguy.pip
 - name: geerlingguy.docker
-- name: escapace.duo_unix
