@@ -3,16 +3,11 @@
   become: yes
     
   tasks:
-    - name: Ensure group 'admin' exists
-      group:
-        name: admin
-        state: present
-
     - name: Create ansible account
       user:
         name: ansible
         password: "{{ user_pw }}"
-        groups: admin
+        groups: sudo
         append: yes
         state: present
 
@@ -21,3 +16,4 @@
         user: ansible
         key: "{{ user_pub_key }}"
         state: present
+      
