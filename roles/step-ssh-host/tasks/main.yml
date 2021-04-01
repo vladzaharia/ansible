@@ -1,3 +1,4 @@
-- import_role: step-bootstrap
+- include_role:
+    name: step-bootstrap
 - import_tasks: ssh-host.yml
 - import_tasks: ssh-renew.yml
