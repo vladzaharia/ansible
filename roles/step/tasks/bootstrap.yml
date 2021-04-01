@@ -2,7 +2,9 @@
 - name: Bootstrap CA
   command: 
     argv:
-      - /usr/local/bin/step ca bootstrap 
+      - /usr/local/bin/step
+      - ca
+      - bootstrap
       - --ca-url {{ step_ca_url|quote }} 
       - --ca-fingerprint {{ step_ca_fingerprint|quote }}
       - --install
