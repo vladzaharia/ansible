@@ -1,0 +1,4 @@
+---
+step_ca_url: ca.zhr.one:9443
+step_ca_fingerprint: 229c0154173cef3bb94ebcd4a84689899b1c7a753236c5c319a8dabc3f63ebcb
+step_dir: /etc/step

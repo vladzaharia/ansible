@@ -10,4 +10,4 @@
       - --install
   become: yes
   environment:
-    STEPPATH: /etc/step
+    STEPPATH: {{ step_dir }}

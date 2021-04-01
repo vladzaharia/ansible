@@ -8,11 +8,13 @@
         path: /usr/local/bin/step
         state: absent
 
-
 - hosts: all
   become: yes
+
+  vars_files:
+    - vars/step.yml
     
   roles:
     - common
     - andrewrothstein.step
-    - step
+    - step-ssh-host
