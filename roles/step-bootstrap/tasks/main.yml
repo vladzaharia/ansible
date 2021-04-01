@@ -10,4 +10,4 @@
       - --install
   become: yes
   environment:
-    STEPPATH: {{ step_dir }}
+    STEPPATH: "{{ step_dir }}"
