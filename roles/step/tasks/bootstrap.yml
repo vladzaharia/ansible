@@ -2,3 +2,5 @@
 - name: Bootstrap CA
   command: step ca bootstrap --ca-url {{ step_ca_url }} --ca-fingerprint {{ step_ca_fingerprint }}
   become: yes
+  environment:
+    STEPPATH: /etc/step
