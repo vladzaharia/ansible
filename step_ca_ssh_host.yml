@@ -1,6 +1,16 @@
 ---
 - hosts: all
   become: yes
+
+  tasks:
+    - name: Remove previous step-cli install
+      ansible.builtin.file:
+        path: /usr/local/bin/step
+        state: absent
+
+
+- hosts: all
+  become: yes
     
   roles:
     - common
