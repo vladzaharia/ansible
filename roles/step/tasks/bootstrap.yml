@@ -1,6 +1,11 @@
 ---
 - name: Bootstrap CA
-  command: step ca bootstrap --ca-url {{ step_ca_url|quote }} --ca-fingerprint {{ step_ca_fingerprint|quote }}
+  command: 
+    argv:
+      - step ca bootstrap 
+      - --ca-url {{ step_ca_url|quote }} 
+      - --ca-fingerprint {{ step_ca_fingerprint|quote }}
+      - --install
   become: yes
   environment:
     STEPPATH: /etc/step
