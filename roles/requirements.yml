@@ -3,4 +3,3 @@
 - name: geerlingguy.pip
 - name: geerlingguy.docker
 - name: andrewrothstein.step
-- name: sitedyno.apt_proxy

@@ -1,0 +1,5 @@
+---
+# defaults file for sitedyno.apt_proxy
+apt_proxy_filename: "00proxy"
+apt_proxy_protocol: "https"
+apt_proxy_url: "localhost:3142"

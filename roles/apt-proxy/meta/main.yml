@@ -1,0 +1,13 @@
+galaxy_info:
+  author: Heath Nail
+  description: Set the proxy used by Apt. 
+  company: 
+  license: "license BSD"
+  min_ansible_version: 1.2
+  platforms:
+    - name: Ubuntu
+      versions:
+      - xenial
+  galaxy_tags:
+    - apt
+    - proxy

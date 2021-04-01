@@ -6,5 +6,5 @@
     - vars/apt.yml
     
   roles:
-    - sitedyno.apt_proxy
+    - apt-proxy
     - common
