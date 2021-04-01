@@ -7,3 +7,4 @@
     
   roles:
     - sitedyno.apt_proxy
+    - common
